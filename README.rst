@@ -49,13 +49,15 @@ misc
 
 * A related process / tool to convert wordpress into rst or md files (ReStructuredText or MarkDown) is `pelican-import <http://docs.getpelican.com/en/latest/importer.html>`_.  I suggest checking it out, even if you do not plan to use Pelican as your static site generator.
 
-* After using `pelican-import <http://docs.getpelican.com/en/latest/importer.html>`_ I had about 150 `.rst` files and I decided to put the date in the filename, so I wrote this short bash script tool to do the renames::
+* After using `pelican-import <http://docs.getpelican.com/en/latest/importer.html>`_ I had about 150 `.rst` files and I decided to put the date in the filename, so I wrote this short bash script tool to do the renames
 
- files=`ls *.rst`
+ .. code-block:: bash
 
- for file in $files:
-   do
-     date_only=`grep ':date:' "$file" | awk '{ print $2; }'`
-     mv "$file" "$date_only-$file"
-   done
+  files=`ls *.rst`
+
+  for file in $files:
+    do
+      date_only=`grep ':date:' "$file" | awk '{ print $2; }'`
+      mv "$file" "$date_only-$file"
+    done
 
