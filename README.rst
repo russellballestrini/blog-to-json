@@ -57,7 +57,7 @@ misc
 
   for file in $files:
     do
-      date_only=`grep ':date:' "$file" | awk '{ print $2; }'`
-      mv "$file" "$date_only-$file"
+      the_date=`grep ':date:' "$file" | awk '{ print $2; }'`
+      mv "$file" "$the_date-$file"
     done
 
