@@ -61,3 +61,8 @@ misc
       mv "$file" "$the_date-$file"
     done
 
+* category and tags have different meanings and assumptions between wordpress and pelican.  As a result I decided to change all my categories to tags using this command:
+
+ .. code-block:: bash
+
+  sed -i'' -e 's/:category:/:tags:/g' *.rst
