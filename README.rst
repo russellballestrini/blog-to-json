@@ -71,4 +71,4 @@ misc
 
  .. code-block:: bash
 
-  sed -e 's/\/wp-content//g' *.rst
+  sed -i'' -e 's/\/wp-content//g' *.rst
