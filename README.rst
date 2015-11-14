@@ -66,3 +66,9 @@ misc
  .. code-block:: bash
 
   sed -i'' -e 's/:category:/:tags:/g' *.rst
+  
+* fix paths to images / uploads to remove wp-content:
+
+.. code-block:: bash
+
+  sed -e 's/\/wp-content//g' *.rst
