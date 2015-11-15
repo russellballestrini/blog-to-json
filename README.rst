@@ -5,6 +5,9 @@ This tool will convert Wordpress XML dumps to JSON.
 
 It is opinionated and removes lots of data.
 
+For more help on your migration checkout:
+`Migrating from WordPress to Pelican <https://russell.ballestrini.net/migrationg-from-wordpress-to-pelican>`_
+
 install::
 
  git clone https://github.com/russellballestrini/wordpress-xml-to-json.git
@@ -44,31 +47,4 @@ example of schema:
     "date": "2011-01-02 14:14:46"
   } 
 
-misc
-====
 
-* A related process / tool to convert wordpress into rst or md files (ReStructuredText or MarkDown) is `pelican-import <http://docs.getpelican.com/en/latest/importer.html>`_.  I suggest checking it out, even if you do not plan to use Pelican as your static site generator.
-
-* After using `pelican-import <http://docs.getpelican.com/en/latest/importer.html>`_ I had about 150 `.rst` files and I decided to put the date in the filename, so I wrote this short bash script tool to do the renames
-
- .. code-block:: bash
-
-  files=`ls *.rst`
-
-  for file in $files:
-    do
-      the_date=`grep ':date:' "$file" | awk '{ print $2; }'`
-      mv "$file" "$the_date-$file"
-    done
-
-* category and tags have different meanings and assumptions between wordpress and pelican.  As a result I decided to change all my categories to tags using this command:
-
- .. code-block:: bash
-
-  sed -i'' -e 's/:category:/:tags:/g' *.rst
-  
-* fix paths to images / uploads to remove wp-content:
-
- .. code-block:: bash
-
-  sed -i'' -e 's/\/wp-content//g' *.rst
