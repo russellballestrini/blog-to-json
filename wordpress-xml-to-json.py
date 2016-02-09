@@ -63,7 +63,7 @@ for post in document['rss']['channel']['item']:
       'timestamp': get_timestamp(post['wp:post_date']),
       'content'  : post['content:encoded'],
       'comments' : get_comments_from_post(post),
-      'metas'    : get_metadata_from_post(post),
+      'meta_data': get_metadata_from_post(post),
     }
 
 print(dumps(posts, indent=2))
