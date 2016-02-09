@@ -57,6 +57,7 @@ for post in document['rss']['channel']['item']:
     name = post['wp:post_name']
     posts[name] = {
       'name'     : name,
+      'post_id'  : post['wp:post_id'],
       'link'     : post['link'],
       'title'    : post['title'],
       'date'     : post['wp:post_date'],
