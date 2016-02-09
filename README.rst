@@ -6,7 +6,7 @@ This tool will convert Wordpress XML dumps to JSON.
 It is opinionated and removes lots of data.
 
 For more help on your migration checkout:
-`Migrating from WordPress to Pelican <hhttp://russell2.ballestrini.net/migrating-from-wordpress-to-pelican/>`_
+`Migrating from WordPress to Pelican <http://russell2.ballestrini.net/migrating-from-wordpress-to-pelican/>`_
 
 install::
 
