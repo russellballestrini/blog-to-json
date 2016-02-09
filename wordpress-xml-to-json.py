@@ -36,6 +36,21 @@ def get_comments_from_post(post):
             comments.append(get_comment_dict(comment))
     return comments
 
+def get_meta_dict(meta):
+    return {
+        'meta_key' : meta['wp:meta_key'],
+        'meta_value': meta['wp:meta_value'],
+    }
+
+def get_metadata_from_post(post):
+    if 'wp:postmeta' not in post:
+      return []
+    metadata = []
+    for meta in post['wp:postmeta']:
+      if isinstance(meta, dict):
+        metadata.append(get_meta_dict(meta))
+    return metadata
+
 posts = {}
 
 for post in document['rss']['channel']['item']:
@@ -48,6 +63,7 @@ for post in document['rss']['channel']['item']:
       'timestamp': get_timestamp(post['wp:post_date']),
       'content'  : post['content:encoded'],
       'comments' : get_comments_from_post(post),
+      'metas'    : get_metadata_from_post(post),
     }
 
 print(dumps(posts, indent=2))
