@@ -36,19 +36,14 @@ def get_comments_from_post(post):
             comments.append(get_comment_dict(comment))
     return comments
 
-def get_meta_dict(meta):
-    return {
-        'meta_key' : meta['wp:meta_key'],
-        'meta_value': meta['wp:meta_value'],
-    }
-
 def get_metadata_from_post(post):
+    metadata = {}
     if 'wp:postmeta' not in post:
-      return []
-    metadata = []
+      return metadata
+
     for meta in post['wp:postmeta']:
       if isinstance(meta, dict):
-        metadata.append(get_meta_dict(meta))
+        metadata[meta['wp:meta_key']] = meta['wp:meta_value']
     return metadata
 
 posts = {}
