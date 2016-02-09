@@ -20,17 +20,17 @@ def get_timestamp(date_str):
 
 def get_comment_dict(comment):
     return {
-        'date'       : comment['wp:comment_date'],
-        'timestamp'  : get_timestamp(comment['wp:comment_date']),
         'author'     : comment['wp:comment_author'],
         'email'      : comment['wp:comment_author_email'],
         'content'    : comment['wp:comment_content'],
+        'date'       : comment['wp:comment_date'],
+        'timestamp'  : get_timestamp(comment['wp:comment_date']),
     }
 
 def get_comments_from_post(post):
-    if 'wp:comment' not in post:
-        return []
     comments = []
+    if 'wp:comment' not in post:
+        return comments
     for comment in post['wp:comment']:
         if isinstance(comment, dict):
             comments.append(get_comment_dict(comment))
@@ -40,7 +40,6 @@ def get_metadata_from_post(post):
     metadata = {}
     if 'wp:postmeta' not in post:
       return metadata
-
     for meta in post['wp:postmeta']:
       if isinstance(meta, dict):
         metadata[meta['wp:meta_key']] = meta['wp:meta_value']
@@ -52,14 +51,14 @@ for post in document['rss']['channel']['item']:
     name = post['wp:post_name']
     posts[name] = {
       'name'     : name,
-      'post_id'  : post['wp:post_id'],
+      'id'       : post['wp:post_id'],
       'link'     : post['link'],
       'title'    : post['title'],
+      'content'  : post['content:encoded'],
       'date'     : post['wp:post_date'],
       'timestamp': get_timestamp(post['wp:post_date']),
-      'content'  : post['content:encoded'],
       'comments' : get_comments_from_post(post),
-      'meta_data': get_metadata_from_post(post),
+      'metadata' : get_metadata_from_post(post),
     }
 
 print(dumps(posts, indent=2))
