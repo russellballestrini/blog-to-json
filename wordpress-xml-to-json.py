@@ -20,8 +20,8 @@ def get_timestamp(date_str):
 
 def get_comment_dict(comment):
     return {
-        'id'         : comment['wp:comment_id'],
-        'parent_id'  : comment['wp:comment_parent'],
+        'id'         : int(comment['wp:comment_id']),
+        'parent_id'  : int(comment['wp:comment_parent']),
         'author_ip'  : comment['wp:comment_author_IP'],
         'author'     : comment['wp:comment_author'],
         'email'      : comment['wp:comment_author_email'],
