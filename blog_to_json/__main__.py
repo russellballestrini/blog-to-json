@@ -2,9 +2,12 @@ import argparse
 
 import xmltodict
 
-from . import wordpress_xml_dict_to_normalized_dict
-
 from json import dumps
+
+from . import (
+    wordpress_xml_dict_to_normalized_dict,
+    disqus_xml_dict_to_normalized_dict,
+)
 
 
 def get_normalized_document(dump, dump_type):
