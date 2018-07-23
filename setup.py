@@ -1,4 +1,4 @@
-# installation: pip install wordpress-xml-to-json
+# installation: pip install blog-to-json
 from setuptools import setup, find_packages
 
 # read requirements.txt for requires, filter comments and newlines.
@@ -7,14 +7,14 @@ with open("requirements.txt", "r") as f:
     requires = filter(sanitize, f.readlines())
 
 setup(
-    name="wordpress-xml-to-json",
+    name="blog-to-json",
     version="0.1.0",
-    description="Convert Wordpress XML dumps to JSON",
-    keywords="Convert Wordpress XML dumps to JSON ",
+    description="Convert Various blogs dumps to JSON",
+    keywords="Convert Wordpress Disqus XML dumps to JSON ",
     long_description=open("README.rst").read(),
     author="Russell Ballestrini",
     author_email="russell@ballestrini.net",
-    url="https://github.com/russellballestrini/wordpress-xml-to-json",
+    url="https://github.com/russellballestrini/blog-to-json",
     license="Public Domain",
     packages=find_packages(),
     install_requires=requires,
@@ -22,7 +22,9 @@ setup(
     setup_requires=["pytest-runner"],
     entry_points={
         "console_scripts": [
-            "wordpress-xml-to-json = wordpress_xml_to_json.__main__:main",
+            "blog-to-json = blog_to_json.__main__:main",
+            "wordpress-xml-to-json = blog_to_json.__main__:main_wordpress",
+            "disqus-xml-to-json = blog_to_json.__main__:main_disqus",
         ]
     },
     classifiers=[

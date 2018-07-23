@@ -2,4 +2,4 @@
 *.json
 *.pyc
 .eggs/*
-wordpress_xml_to_json.egg-info/*
+*.egg-info/*

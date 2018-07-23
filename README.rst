@@ -1,18 +1,23 @@
-wordpress-xml-to-json
+blog-to-json
 ######################
 
-This tool will convert Wordpress XML dumps to JSON.
+This tool will convert various blog dumps to a standard JSON format.
 
-It is opinionated and removes lots of data.
+For example:
 
-For more help on your migration checkout:
-`Migrating from WordPress to Pelican <http://russell.ballestrini.net/migrating-from-wordpress-to-pelican/>`_
+ * Wordpress XML dumps to JSON
+ * Disqus XML dumps to JSON
+
+It is opinionated and may at times remove data.
 
 install::
 
- git clone https://github.com/russellballestrini/wordpress-xml-to-json.git
- cd wordpress-xml-to-json
+ git clone https://github.com/russellballestrini/blog-to-json.git
+ cd blog-to-json
  python setup.py develop
+
+Wordpress XML to JSON
+========================
 
 how to use::
 
@@ -33,14 +38,16 @@ example of schema:
          "timestamp": 1301841187, 
          "content": "Hi, this was just what I needed, did a few modifications but basically worked out of the box. Thanks for posting", 
          "email": "oops", 
-         "author": "Kristian"
+         "author": "Kristian",
+         "author_ip": "192.168.1.5"
        }, 
        {
          "date": "2011-04-03 14:19:46", 
          "timestamp": 1301854786, 
          "content": "I'm interested in the modifications, I just placed the code into bitbucket.  Feel free to branch it.  \n\nI'm also interested in seeing your project that you used it in.  Thanks", 
          "email": "oops", 
-         "author": "Russell Ballestrini"
+         "author": "Russell Ballestrini",
+         "author_ip": "192.168.1.6"
        }
      ], 
      "content": "<p><strong>I wrote <a href=\"https://bitbucket.org/russellballestrini/bread/raw/tip/bread.py\">bread.py</a> a few days ago.</strong> <a href=\"https://bitbucket.org/russellballestrini/bread/raw/tip/bread.py\">Bread.py</a> is a simple to use python breadcrumb module. \n</p>\n\n<p>\nThe bread object accepts a url string and grants access to the url crumbs (parts) or url links (list of hrefs to each crumb) .\n</p>\n\n<p>\nI have released <a href=\"https://bitbucket.org/russellballestrini/bread/raw/tip/bread.py\">bread.py</a> into the public domain and you may view the full source code here: <a href=\"https://bitbucket.org/russellballestrini/bread/src\">https://bitbucket.org/russellballestrini/bread/src</a>\n</p>\n\n<p>\n<strong>Update</strong>\n</p>\n\n<p>\nI recently revisited this module and wrote a tutorial on how to <a href=\"http://russell.ballestrini.net/add-a-breadcrumb-subscriber-to-a-pyramid-project-using-4-simple-steps/\">Add a Breadcrumb Subscriber to a Pyramid project using 4 simple steps</a>.\n</p>\n\n<ul>\n<li>Demo of bread.py: <a href=\"http://school.yohdah.com/\">http://school.yohdah.com/</a></li>\n<li>Pyrawiki will use bread.py</li> \n</ul>\n\n<br />\n\n<strong>You should follow me on twitter <a href=\"http://twitter.com/russellbal\" target=\"_blank\">here</a></strong>\n\n<span style=\"font-size: 10px;\">\n<script src=\"https://bitbucket.org/russellballestrini/bread/src/50a1a20fc3f3/bread.py?embed=t\"></script>\n</span>", 
@@ -48,3 +55,14 @@ example of schema:
      "date": "2011-01-02 14:14:46"
    }
  }
+
+
+Why?
+============
+
+It's your data, thats why!
+
+I created and used this tool when I `Migrated from WordPress to Pelican <http://russell.ballestrini.net/migrating-from-wordpress-to-pelican/>`_.
+
+Others have used this tool when migrating comments from Disqus to Remarkbox.
+
