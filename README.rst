@@ -12,11 +12,11 @@ install::
 
  git clone https://github.com/russellballestrini/wordpress-xml-to-json.git
  cd wordpress-xml-to-json
- pip install -r requirements.txt
+ python setup.py develop
 
 how to use::
 
- python wordpress-xml-to-json.py example.xml 
+ wordpress-xml-to-json example.xml 
 
 example of schema:
 
