@@ -1,6 +1,6 @@
 import miniuri
 
-from .utils import get_timestamp
+from .utils import get_disqus_timestamp as get_timestamp
 
 
 def get_comment_dict(comment, thread_id):

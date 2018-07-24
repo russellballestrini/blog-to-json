@@ -1,4 +1,4 @@
-from .utils import get_timestamp
+from .utils import get_wordpress_timestamp as get_timestamp
 
 
 def get_comment_dict(comment):
