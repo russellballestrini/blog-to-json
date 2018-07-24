@@ -10,7 +10,10 @@ For example:
 
 It is opinionated and may at times remove data.
 
-install::
+install
+===========
+
+::
 
  git clone https://github.com/russellballestrini/blog-to-json.git
  cd blog-to-json
@@ -62,7 +65,5 @@ Why?
 
 It's your data, thats why!
 
-I created and used this tool when I `Migrated from WordPress to Pelican <http://russell.ballestrini.net/migrating-from-wordpress-to-pelican/>`_.
-
-Others have used this tool when migrating comments from Disqus to Remarkbox.
+I created and used this tool during my `Migration from WordPress to Pelican <http://russell.ballestrini.net/migrating-from-wordpress-to-pelican/>`_. Others have used this tool to migrate comments from Disqus to `Remarkbox <https://www.remarkbox.com>`_.
 
