@@ -5,8 +5,8 @@ This tool will convert various blog dumps to a standard JSON format.
 
 For example:
 
- * Wordpress XML dumps to JSON
- * Disqus XML dumps to JSON
+* Wordpress XML dumps to JSON
+* Disqus XML dumps to JSON
 
 It is opinionated and may at times remove data.
 
