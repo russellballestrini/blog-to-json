@@ -17,10 +17,16 @@ def get_comment_dict(comment):
 def get_comments_from_post(post):
     comments = []
     if 'wp:comment' not in post:
+        # some posts do not have comments.
         return comments
-    for comment in post['wp:comment']:
-        if isinstance(comment, dict):
-            comments.append(get_comment_dict(comment))
+
+    post_comments = post['wp:comment']
+    if not isinstance(post_comments, list):
+        # some posts have 1 comment, which is type Dict, so wrap in list.
+        post_comments = [post_comments]
+
+    for comment in post_comments:
+        comments.append(get_comment_dict(comment))
     return comments
 
 
@@ -38,6 +44,10 @@ def wordpress_xml_dict_to_normalized_dict(document):
     posts = {}
     for post in document['rss']['channel']['item']:
         name = post['wp:post_name']
+        post_type = post['wp:post_type']
+        if post_type != "post":
+            # an attachment might have the same "post_name" as an actual post.
+            continue
         posts[name] = {
           'name'     : name,
           'id'       : post['wp:post_id'],
