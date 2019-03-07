@@ -14,9 +14,9 @@ def get_comment_dict(comment, thread_id):
     return {
         'id'         : int(comment['@dsq:id']),
         'parent_id'  : parent_id,
-        'author_ip'  : comment['ipAddress'],
+        'author_ip'  : comment.get('ipAddress'),
         'author'     : comment['author']['name'],
-        'email'      : comment['author']['email'],
+        'email'      : comment['author'].get('email'),
         'content'    : comment['message'],
         'date'       : comment['createdAt'],
         'timestamp'  : get_timestamp(comment['createdAt']),
