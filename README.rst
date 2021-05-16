@@ -7,6 +7,7 @@ For example:
 
 * Wordpress XML dumps to JSON
 * Disqus XML dumps to JSON
+* Graphcomment WordPress XML dumps to JSON
 
 It is opinionated and may at times remove data.
 
@@ -58,6 +59,55 @@ example of schema:
      "date": "2011-01-02 14:14:46"
    }
  }
+
+Graphcomment WordPress XML to JSON
+==================================
+Note that this uses Python 2.7
+
+how to use::
+
+ graphcomment-xml-to-json grcomm.wxr --host "https://abc.xyz"
+
+example of schema:
+
+.. code-block:: json
+
+  "posts_jupyter-orgmode": {
+    "content": null,
+    "link": "https://abc.xyz/posts/jupyter-orgmode/",
+    "name": "posts_jupyter-orgmode",
+    "title": "Reflections",
+    "date": "2020-09-22 15:57:34",
+    "timestamp": 1600790254,
+    "id": "5f6a1eee2f57815d17188de2",
+    "comments": [
+      {
+        "content": "Thanks!!!!! a lot!!!",
+        "parent_id": null,
+        "author": "SamTux",
+        "date": "2021-04-13 03:16:54",
+        "timestamp": 1618283814,
+        "id": "60750d2613ebd3704ec85f6f",
+        "author_ip": "190.25.34.217",
+        "email": "redacted"
+      }
+    ],
+    "metadata": {}
+  },
+
+Conda Usage
+===========
+
+An easy way to get a local dump is:
+
+.. code-block:: sh
+
+ conda create -p ./tmp python=2.7 -c conda-forge
+ conda activate ./tmp
+ pip install -r requirements.txt
+ python setup.py install && graphcomment-xml-to-json gen_comm.wxr --host "https://abc.xyz"
+ # Or
+ python setup.py install && wordpress-xml-to-json example.xml
 
 
 Why?

@@ -25,6 +25,7 @@ setup(
             "blog-to-json = blog_to_json.__main__:main",
             "wordpress-xml-to-json = blog_to_json.__main__:main_wordpress",
             "disqus-xml-to-json = blog_to_json.__main__:main_disqus",
+            "graphcomment-xml-to-json = blog_to_json.__main__:main_graphcomment",
         ]
     },
     classifiers=[
