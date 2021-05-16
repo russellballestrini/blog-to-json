@@ -95,6 +95,20 @@ example of schema:
     "metadata": {}
   },
 
+Conda Usage
+===========
+
+An easy way to get a local dump is:
+
+.. code-block:: sh
+
+ conda create -p ./tmp python=2.7 -c conda-forge
+ conda activate ./tmp
+ pip install -r requirements.txt
+ python setup.py install && graphcomment-xml-to-json gen_comm.wxr --host "https://abc.xyz"
+ # Or
+ python setup.py install && wordpress-xml-to-json example.xml
+
 
 Why?
 ============
