@@ -3,3 +3,10 @@
 *.pyc
 .eggs/*
 *.egg-info/*
+*.swp
+
+bin/*
+lib/*
+lib*
+
+pyvenv.cfg
