@@ -5,6 +5,7 @@
 *.egg-info/*
 *.swp
 
+dist/*
 bin/*
 lib/*
 lib*

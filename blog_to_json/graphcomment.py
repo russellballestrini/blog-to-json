@@ -1,5 +1,10 @@
 from .utils import get_wordpress_timestamp as get_timestamp
-from urlparse import urlparse
+
+
+try:
+    from urlparse import urlparse
+except:
+    from urllib.parse import urlparse
 
 def get_comment_dict(comment):
     return {
