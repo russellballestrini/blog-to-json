@@ -1,0 +1,38 @@
+These are real blog export files. They cannot be recreated.
+
+The original blogs are offline or the export endpoints no longer exist.
+The XML files are the irreplaceable source artifacts. The JSON files are
+the expected parser output frozen at the time of capture.
+
+Do not delete these files. Do not regenerate the JSON without verifying
+the diff is intentional. If you change parser behavior, run:
+
+    make update-golden
+
+and review the diff before committing.
+
+Provenance:
+
+  russellballestrini.wordpress.2016-02-10.xml
+  russellballestrini.wordpress.2017-09-05.xml
+    WordPress export of russell.ballestrini.net (Russell Ballestrini,
+    author of the permacomputer manifesto and the `ago` library).
+    Two snapshots: Feb 2016 and Sep 2017. The 2017 export is the more
+    complete version and is used for golden tests.
+
+  russellballestrini.wordpress.json
+    Frozen output from the 2017 XML through wordpress parser.
+
+  brettterpstra-2019-03-01T21_42_06.627201-all.xml
+    Disqus export of brettterpstra.com. March 2019.
+
+  brettterpstra.json
+    Frozen output from the Disqus parser. Verified exact match.
+
+  printableprompts.WordPress.2022-05-18.xml
+  printableprompts.json
+    WordPress export of printableprompts.com. May 2022. Verified exact match.
+
+  wingitmom.WordPress.2022-05-18.xml
+  wingitmom.com.json
+    WordPress export of wingitmom.com. May 2022. Verified exact match.

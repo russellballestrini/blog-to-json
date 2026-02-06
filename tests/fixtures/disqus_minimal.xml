@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<disqus xmlns:dsq="http://disqus.com/disqus-internals">
+  <thread dsq:id="1001">
+    <link>https://example.com/first-post/</link>
+    <title>First Post</title>
+    <createdAt>2019-03-01T12:00:00Z</createdAt>
+  </thread>
+  <thread dsq:id="1002">
+    <link>https://example.com/second-post/</link>
+    <title>Second Post</title>
+    <createdAt>2019-04-01T14:00:00Z</createdAt>
+  </thread>
+  <post dsq:id="5001">
+    <thread dsq:id="1001"/>
+    <message>Nice article!</message>
+    <createdAt>2019-03-02T08:30:00Z</createdAt>
+    <isDeleted>false</isDeleted>
+    <author>
+      <name>Dave</name>
+      <email>dave@example.com</email>
+    </author>
+    <ipAddress>172.16.0.1</ipAddress>
+  </post>
+  <post dsq:id="5002">
+    <thread dsq:id="1001"/>
+    <parent dsq:id="5001"/>
+    <message>I agree with Dave.</message>
+    <createdAt>2019-03-02T09:00:00Z</createdAt>
+    <isDeleted>false</isDeleted>
+    <author>
+      <name>Eve</name>
+      <email>eve@example.com</email>
+    </author>
+    <ipAddress>172.16.0.2</ipAddress>
+  </post>
+  <post dsq:id="5003">
+    <thread dsq:id="1001"/>
+    <message>This was deleted.</message>
+    <createdAt>2019-03-02T10:00:00Z</createdAt>
+    <isDeleted>true</isDeleted>
+    <author>
+      <name>Spam</name>
+      <email>spam@example.com</email>
+    </author>
+    <ipAddress>172.16.0.99</ipAddress>
+  </post>
+  <post dsq:id="5004">
+    <thread dsq:id="1002"/>
+    <message>Second post comment.</message>
+    <createdAt>2019-04-02T11:00:00Z</createdAt>
+    <isDeleted>false</isDeleted>
+    <author>
+      <name>Frank</name>
+    </author>
+    <ipAddress>172.16.0.3</ipAddress>
+  </post>
+</disqus>

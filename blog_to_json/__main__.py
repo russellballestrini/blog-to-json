@@ -40,7 +40,7 @@ def _main(parser):
     with args.path as f:
         dump = f.read()
 
-    if args.type is not "graphcomment":
+    if args.type != "graphcomment":
         normalized_document = get_normalized_document(dump, args.type)
     else:
         normalized_document = get_normalized_document(dump, args.type, args.host)

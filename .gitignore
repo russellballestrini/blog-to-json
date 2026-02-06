@@ -1,5 +1,10 @@
 *.xml
 *.json
+
+# test fixtures — synthetic and golden (irreplaceable blog exports)
+!tests/fixtures/*.xml
+!tests/fixtures/golden/*.xml
+!tests/fixtures/golden/*.json
 *.pyc
 .eggs/*
 *.egg-info/*
@@ -11,3 +16,4 @@ lib/*
 lib*
 
 pyvenv.cfg
+.venv/
